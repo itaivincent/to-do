@@ -13,8 +13,8 @@ class CreateCompletedTasksTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('tasks')){
-            Schema::create('tasks', function (Blueprint $table) {
+        if(!Schema::hasTable('completed_tasks')){
+            Schema::create('completed_tasks', function (Blueprint $table) {
                 $table->bigIncrements('id');           
                 $table->string('title');           
                 $table->string('description');

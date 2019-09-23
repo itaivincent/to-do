@@ -109,6 +109,19 @@ class TaskController extends Controller
             $task_update = Task::where('id',$task->id)->update([
                 'status' => '1',
             ]);
+
+
+            if($task_update){
+              
+                $completed_tasks = Completed_task::create([
+
+                    'title' => $task->name,
+                    'status' => '1',
+                    'user_id' => $task->user_id,
+                    'description' => $task->description,                 
+                ]);
+
+            }
         }
     }
 
