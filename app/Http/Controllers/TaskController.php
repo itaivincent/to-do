@@ -112,7 +112,7 @@ class TaskController extends Controller
                 ]);          
               
                 $completed_tasks = Completed_task::create([
-                    'title' => $task->name,
+                    'title' => $task->title,
                     'status' => '1',
                     'user_id' => $task->user_id,
                     'description' => $task->description,                 

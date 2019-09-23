@@ -8,7 +8,7 @@
             <h3 class="tile-title">Complete your to-do</h3>
             <hr>
             <div class="tile-body">
-              <form class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">                  	      
+              <form  class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">                  	      
                   @csrf
                 <input type="hidden" name="_method" value="put">
                 <div class="form-group col-md-3">
@@ -26,12 +26,11 @@
                 <div class="form-group col-md-3">
                   <label class="control-label">Date you made this to-do</label>
                   <input class="form-control" name="created_at" type="text" value="{{$task->created_at}}" readonly>
-                </div>
-                
+                </div>                
                 <div class="form-group col-md-4 align-self-end">
                 <hr>
-                  <button class="btn btn-success" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Complete to-do</button>
-                  <button class="btn btn-secondary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Back</button>
+                  <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Complete to-do</button>
+                 <a hef="/tasks"> <button class="btn btn-secondary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Back</button></a>
                 </div>
               </form>
             </div>

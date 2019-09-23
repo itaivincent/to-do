@@ -25,7 +25,7 @@ class Completed_task extends Model
         'status',
         'user_id',
         'description',
-        'deadline',
+       
     ];
 
     /**

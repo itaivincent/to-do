@@ -17,8 +17,7 @@ class CreateCompletedTasksTable extends Migration
             Schema::create('completed_tasks', function (Blueprint $table) {
                 $table->bigIncrements('id');           
                 $table->string('title');           
-                $table->string('description');
-                $table->string('deadline'); 
+                $table->string('description');              
                 $table->bigInteger('user_id')->unsigned();          
                 $table->string('status')->default(0);
                 $table->timestamps();
