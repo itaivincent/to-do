@@ -87,7 +87,13 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        if(Auth::check()){
+            $task = Task::where('id', $task->id)->first();
+            $user = User::where('id', $task->user_id)->first();
+
+        }
+    
+        return view('tasks.edit', compact('task','user'));
     }
 
     /**

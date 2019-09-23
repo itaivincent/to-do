@@ -10,12 +10,12 @@
     @include('layouts.admin.meta')
     @include('layouts.admin.stylesheets')
     @yield('styles')
-    @include('sweetalert::alert')
+   
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
     @include('admin.partials.navbar')
-    @include('sweetalert::alert')
+  
     <div class="app-body">
         @include('admin.partials.sidebar')
 
