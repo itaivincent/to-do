@@ -105,7 +105,11 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        if(Auth::check()){
+            $task_update = Task::where('id',$task->id)->update([
+                'status' => '1',
+            ]);
+        }
     }
 
     /**

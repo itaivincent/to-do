@@ -8,7 +8,8 @@
             <h3 class="tile-title">Complete your to-do</h3>
             <hr>
             <div class="tile-body">
-              <form class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">
+              <form class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">                  
+	            <input type="hidden" name="_method" value="put">
                   @csrf
                 <div class="form-group col-md-3">
                   <label class="control-label">Name</label>

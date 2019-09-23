@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
     return $this->hasMany('App\Models\Task');
     }
+
+    public function completed_tasks()
+    {
+    return $this->hasMany('App\Models\Completed_task');
+    }
 }
