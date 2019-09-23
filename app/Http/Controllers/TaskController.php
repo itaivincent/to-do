@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Alert;
 use App\Models\Task;
+use App\Models\Completed_task;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -90,7 +91,6 @@ class TaskController extends Controller
         if(Auth::check()){
             $task = Task::where('id', $task->id)->first();
             $user = User::where('id', $task->user_id)->first();
-
         }
     
         return view('tasks.edit', compact('task','user'));
@@ -106,22 +106,24 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
         if(Auth::check()){
-            $task_update = Task::where('id',$task->id)->update([
+
+                 $task_update = Task::where('id',$task->id)->update([
                 'status' => '1',
-            ]);
-
-
-            if($task_update){
+                ]);          
               
                 $completed_tasks = Completed_task::create([
-
                     'title' => $task->name,
                     'status' => '1',
                     'user_id' => $task->user_id,
                     'description' => $task->description,                 
                 ]);
 
-            }
+        if($task_update){
+
+            return redirect()->route('tasks.index')->with('success', 'Task succesfully completed');
+
+           }
+            
         }
     }
 

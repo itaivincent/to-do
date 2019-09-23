@@ -8,9 +8,9 @@
             <h3 class="tile-title">Complete your to-do</h3>
             <hr>
             <div class="tile-body">
-              <form class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">                  
-	            <input type="hidden" name="_method" value="put">
+              <form class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">                  	      
                   @csrf
+                <input type="hidden" name="_method" value="put">
                 <div class="form-group col-md-3">
                   <label class="control-label">Name</label>
                   <input class="form-control" name="name" type="text" value="{{$task->title}}" readonly>
@@ -31,6 +31,7 @@
                 <div class="form-group col-md-4 align-self-end">
                 <hr>
                   <button class="btn btn-success" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Complete to-do</button>
+                  <button class="btn btn-secondary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Back</button>
                 </div>
               </form>
             </div>
