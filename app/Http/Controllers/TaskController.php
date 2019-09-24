@@ -40,7 +40,18 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::check()){
+           // $tasks = Auth::user()
+            //->tasks()
+            //->orderByDesc('created_at');
+
+            $tasks = Task::where('user_id', Auth::user()->id)->get();
+            $users = User::where('id',Auth::user()->id)->first();
+
+           // var_dump($tasks);exit;
+
+            return view('tasks.create', compact('tasks','users'));
+         }
     }
 
     /**
@@ -106,13 +117,7 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
         if(Auth::check()){
-
-
-            if($task->status == 1)
-            {
-               return reditect()->route('tasks.index')->with('warning', 'this task has already been completed');
-            }
-
+          
                  $task_update = Task::where('id',$task->id)->update([
                 'status' => '1',
                 ]);          
@@ -131,6 +136,23 @@ class TaskController extends Controller
            }
             
         }
+    }
+
+
+    public function all_tasks()
+    {
+        if(Auth::check()){
+            // $tasks = Auth::user()
+             //->tasks()
+             //->orderByDesc('created_at');
+ 
+             $tasks = Task::where('user_id', Auth::user()->id)->get();
+             $users = User::where('id',Auth::user()->id)->first();
+ 
+            // var_dump($tasks);exit;
+ 
+             return view('tasks.all_tasks', compact('tasks','users'));
+          }
     }
 
     /**

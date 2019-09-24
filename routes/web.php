@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function() {
+
     Route::resource('tasks', 'TaskController', );
+    Route::get('all_tasks', 'TaskController@all_tasks',)->name('tasks.all_tasks');
 
 });
