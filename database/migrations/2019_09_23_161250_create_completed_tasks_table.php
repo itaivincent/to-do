@@ -20,11 +20,8 @@ class CreateCompletedTasksTable extends Migration
                 $table->string('description');              
                 $table->bigInteger('user_id')->unsigned();          
                 $table->string('status')->default(0);
-                $table->timestamps();
-    
-                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-     
-           
+                $table->timestamps();  
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');       
             });
           }
     }

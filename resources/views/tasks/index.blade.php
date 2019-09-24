@@ -29,7 +29,7 @@
 				<div class="card">
 					<div class="card-header" id="headingTwo">
 						<h2 class="mb-0">
-						<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{$task->id}}" aria-expanded="false" aria-controls="collapseTwo">{{ $task->title }}</a><a href='/tasks/{{ $task->id }}/edit'><button type="button" class="btn btn-outline-info btn-rounded waves-effect" style="width:80px;" >Details</button></a>									
+						<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{$task->id}}" aria-expanded="false" aria-controls="collapseTwo">{{ $task->title }}</a><a href='/tasks/{{ $task->id }}/edit'><button type="button" class="btn btn-outline-info btn-rounded waves-effect" style="width:150px;">Complete task</button></a>									
 						</h2>						
 					</div>
 					<div id="{{$task->id}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
