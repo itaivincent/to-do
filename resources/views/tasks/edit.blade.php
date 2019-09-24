@@ -6,6 +6,15 @@
         <div class="col-md-12">
           <div class="tile">
             <h3 class="tile-title">Complete your to-do</h3>
+            @if($task->status == 1)
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-info">
+                <button class="close" type="button" data-dismiss="alert"></button>
+                <h4>Please note!</h4>
+                <p>This task has already been completed, you can just view the details of this task,<a class="alert-link" href="/tasks"> Go back and create another task</a>.</p>
+              </div>
+            </div>
+            @endif
             <hr>
             <div class="tile-body">
               <form  class="row" method ="POST" action="{{route('tasks.update',[$task->id]) }}">                  	      
@@ -29,7 +38,9 @@
                 </div>                                             
                 <div class="form-group col-md-4 align-self-end">
                 <hr>
+                @if($task->status == 0)
                   <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Complete to-do</button>
+                  @endif                                                
                  <a hef="/tasks"> <button class="btn btn-secondary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Back</button></a>
                 </div>
               </form>

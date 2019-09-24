@@ -107,6 +107,12 @@ class TaskController extends Controller
     {
         if(Auth::check()){
 
+
+            if($task->status == 1)
+            {
+               return reditect()->route('tasks.index')->with('warning', 'this task has already been completed');
+            }
+
                  $task_update = Task::where('id',$task->id)->update([
                 'status' => '1',
                 ]);          
