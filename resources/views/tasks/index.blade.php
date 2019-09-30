@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 @section('content')
 <main class="app-content">
     <div class="row user">
@@ -69,9 +71,22 @@
                     <div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-							<input type="date"  id="input" class="form-control" name="deadline" required="required">
+							<input type="date" id="input" class="form-control" name="deadline" required="required">
 						</div>
-                    </div>	
+					</div>	
+
+                    <div class="form-group">
+					<div class="input-group">    
+					<span class="input-group-addon"><i class="fa fa-bars"></i></span>                
+                     <select name="reminder_frequency" id="grower_agent" class="js-example-basic-single form-control">                  
+					 <option value="minute" selected>Minute</option>
+					 <option value="hourly" selected>Hourly</option>
+					 <option value="Twice_Daily" selected>Twice Daily</option>
+					 <option value="Daily" selected>Daily</option>                                   
+					</select>
+					</div>  
+                </div>
+             
                    		
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary btn-block btn-lg">Make to-do</button>

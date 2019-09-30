@@ -20,6 +20,14 @@
 <script src="{{ asset('js/gijgo.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script>
+    $("#datetime").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii'
+    });
+</script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
 
 
 <script type="text/javascript">
@@ -115,6 +123,11 @@
 		});
 	});
 </script>
+
+<script>
+ $('#input').datetimepicker({ footer: true, modal: true });
+ </script>
+
 
 
 

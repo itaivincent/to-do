@@ -18,6 +18,7 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');           
             $table->string('title');           
             $table->string('description');
+            $table->string('reminder_frequency');
             $table->string('deadline'); 
             $table->bigInteger('user_id')->unsigned();          
             $table->string('status')->default(0);

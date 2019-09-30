@@ -23,6 +23,7 @@ class Task extends Model
     protected $fillable = [
         'title',
         'status',
+        'reminder_frequency',
         'user_id',
         'description',
         'deadline',

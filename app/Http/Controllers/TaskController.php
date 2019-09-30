@@ -66,6 +66,7 @@ class TaskController extends Controller
               'title' => $request->input('title'),
               'description' => $request->input('description'),
               'deadline' => $request->input('deadline'),
+              'reminder_frequency' => $request->input('reminder_frequency'),
               'user_id' => Auth::user()->id,
               'status' => '0'
           ]);
