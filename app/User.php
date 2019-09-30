@@ -42,6 +42,12 @@ class User extends Authenticatable
     return $this->hasMany('App\Models\Task');
     }
 
+    public function events()
+    {
+    return $this->hasMany('App\Models\Event');
+    }
+
+
     public function completed_tasks()
     {
     return $this->hasMany('App\Models\Completed_task');

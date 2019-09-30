@@ -13,11 +13,19 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable('events')){
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->bigInteger('user_id')->unsigned(); 
+            $table->string('priority_level');
+            $table->string('status')->default(0);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
         });
     }
+}
 
     /**
      * Reverse the migrations.
