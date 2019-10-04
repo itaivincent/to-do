@@ -22,5 +22,6 @@ Route::middleware(['auth'])->group(function() {
 
     Route::resource('tasks', 'TaskController', );
     Route::get('all_tasks', 'TaskController@all_tasks',)->name('tasks.all_tasks');
+    Route::resource('events', 'EventController',);
 
 });

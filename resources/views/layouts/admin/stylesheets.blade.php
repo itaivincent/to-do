@@ -7,5 +7,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/task_index.css') }}">
 <link rel="stylesheet"  href="{{ asset('css/task_modal.css') }}">
 <link rel="stylesheet"  href="{{ asset('css/gijgo.css') }}">
+<link rel="stylesheet"  href="{{ asset('css/modal2.css') }}">
 
 

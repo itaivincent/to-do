@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use Auth;
+use App\User;
+use App\Models\Task;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -24,7 +27,17 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::check()){
+            // $tasks = Auth::user()
+             //->tasks()
+             //->orderByDesc('created_at');
+ 
+             $tasks = Task::where('user_id', Auth::user()->id)->get();
+             $users = User::where('id',Auth::user()->id)->first();
+ 
+       
+             return view('events.create', compact('tasks','users'));
+          }
     }
 
     /**
