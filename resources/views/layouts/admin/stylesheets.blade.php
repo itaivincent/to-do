@@ -8,5 +8,7 @@
 <link rel="stylesheet"  href="{{ asset('css/task_modal.css') }}">
 <link rel="stylesheet"  href="{{ asset('css/gijgo.css') }}">
 <link rel="stylesheet"  href="{{ asset('css/modal2.css') }}">
+<link rel="stylesheet"  href="{{ asset('css/sweetalert.css') }}">
+<link rel="stylesheet"  href="{{ asset('css/sweetalert2.min.css') }}">
 
 

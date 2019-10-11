@@ -1,7 +1,9 @@
 @extends('layouts.admin')
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+	<script src="js/sweetalert.min.js"></script>
+	
 @section('content')
 <main class="app-content">
     <div class="row user">
@@ -71,7 +73,7 @@
                     <div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-							<input type="date" id="input" class="form-control" name="deadline" required="required">
+							<input type="date" class="form-control" name="deadline" required="required">
 						</div>
 					</div>	
 
@@ -98,8 +100,10 @@
 		</div> 
 	</div>
 </div> 
+
 </main>
 @endsection
+
 <script>
  $('#input').datetimepicker({ footer: true, modal: true });
  </script>

@@ -10,6 +10,8 @@ class Event extends Model
         'name',
         'priority_level',
         'user_id',  
+        'start_date',
+        'end_date',
         'status',        
     ];
 

@@ -73,7 +73,7 @@ class TaskController extends Controller
 
           if($create_task){
            
-            return redirect()->route('tasks.index')->with('success', 'success');
+            return redirect()->route('tasks.index')->with('success','You have succesfully created a task');
            
         }
 

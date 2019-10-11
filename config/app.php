@@ -166,6 +166,9 @@ return [
          * Package Service Providers...
          */
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        jeremykenedy\LaravelHttps\LaravelHttpsServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
        
         /*
          * Application Service Providers...
@@ -227,8 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
-   
-
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

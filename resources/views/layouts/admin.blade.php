@@ -36,5 +36,6 @@
 </script>
 
 @yield('scripts')
+@include('sweetalert::alert')
 </body>
 </html>

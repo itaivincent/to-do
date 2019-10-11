@@ -20,6 +20,8 @@ class CreateEventsTable extends Migration
             $table->bigInteger('user_id')->unsigned(); 
             $table->string('priority_level');
             $table->string('status')->default(0);
+            $table->string('start_date');
+            $table->string('end_date');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
